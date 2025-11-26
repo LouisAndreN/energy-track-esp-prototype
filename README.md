@@ -10,7 +10,7 @@ This system is deployed in a japanese residence but can also be adapted for indu
 - ADS1115
 - Adafruit Jack plug TRRS
 - ESP32 S3 R16N8 (or ESP32-WROOM-32E)
-- Set of resistances
-- Set of condensers
+- Set of resistors
+- Set of capacitors
 - Male plug and female plug JP type
 - AWG14 cables
