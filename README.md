@@ -19,8 +19,6 @@ This system is deployed in a japanese residence but can also be adapted for indu
 - Proster multimeter
 
 See `docs/hardware_schematic.pdf` for complete circuit.
-<img width="1680" height="755" alt="image" src="https://github.com/user-attachments/assets/7fce764c-8b88-43d0-b85d-26f3175560d3" />
-
 
 The SCT-013 current sensor connects via a 3.5mm TRRS jack.
 
