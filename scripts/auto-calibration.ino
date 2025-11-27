@@ -9,9 +9,9 @@ Calibration automatique basée sur:
 Tu modifies juste knownPower_W au début.
 */
 
-// ========= PARAMÈTRES DE CALIBRATION ==========
-float knownPower_W = 60.0f;      // <--- PUISSANCE DE TA CHARGE EN WATTS
-float mainsVoltage_V = 100.0f;   // Japon = 100V, France = 230V
+// ========= CALIBRATION SETTINGS ==========
+float knownPower_W = 60.0f;      
+float mainsVoltage_V = 100.0f;   // Japan = 100V
 // ==============================================
 
 Adafruit_ADS1115 ads;
