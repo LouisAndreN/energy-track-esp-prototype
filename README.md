@@ -1,13 +1,22 @@
 # Non-Intrusive Load Monitoring System & Energy Monitoring
 
-The goal of this project is to create a monitoring system to track energy consumption of home devices such as frdge, induction heater, air conditionner, computers, charging smartphones, lights, ..., to detect anomalies and anticipate maintenance, predict consumption of household and anticipate devices usage time to predict device usage patterns to avoid tripping the circuit breaker.
+This project provides a full end-to-end Non-Intrusive Load Monitoring (NILM) system designed for the Japanese electrical environment (100V, 50/60Hz).
+It integrates custom low-cost hardware, real household data, and lightweight machine learning models to estimate appliance-level energy usage in real time.
 
-This system is deployed in a japanese residence but can also be adapted for industrial fields, in manufacture or other urban buildings.
+The goal is to provide an accessible and practical system for monitoring household energy usage, detecting anomalies, and predicting future consumption patterns — with a strong focus on real-world deployment rather than academic demonstration.
+
+**Key functionnalities :**
+- Real-time appliance-level energy disaggregation (fridge, AC, IH cooking heater, computer, smartphone charging, lighting, etc.)
+- Forecasting of total household consumption and prediction of device usage patterns
+- From Custom analog conditioning circuit design to ML deployment
+- Dashboard for live monitoring and historical analysis
+- Edge preprocessing (ESP32) + Central ML (Raspberry Pi 5)
+- Support for Japanese standards (seasonal patterns, 30A breaker, 100V, 50/60Hz)
 
 ## Used material
 
-- SCT-013-005 (5A/1V) and SCT-013-030 (30A/1V)
-- ADS1115
+- Current transformers : SCT-013-005 (5A/1V) and SCT-013-030 (30A/1V)
+- 16-bit ADC (ADS1115, 860 SPS)
 - Adafruit 3.5mm TRRS jack breakout
 - ESP32 S3 R16N8 (or ESP32-WROOM-32E)
 - 3× 10kΩ resistors (divider + alias)
