@@ -10,13 +10,13 @@ Z_ADC_A0 ≈ 1-10 MΩ
 Z_ADC_A1 ≈ 1-10 MΩ
 
 // VREF to GND impedance
-Z_VREF_to_GND = Z_R2 + Z_C_VREF = 41.8 kΩ
+Z_VREF_to_GND = sqrt(Z_R2^2 + Z_C_VREF^2) = 33.3 kΩ
 
 // Thevenin impedance at VREF
 Z_th = Z_R1 || Z_VREF_to_GND
-Z_th = 10k || 41.8k
-Z_th = (10k × 41.8k) / (10k + 41.8k)
-Z_th = 418k / 51.8k ≈ 8.07 kΩ
+Z_th = 10k || 33.3k
+Z_th = (10k × 33.3k) / (10k + 33.3k)
+Z_th = 333k / 43.3k ≈ 7.69 kΩ
 
 // Path A0 from VREF impedance
 Z_to_A0 = Z_Rpull + (Z_Rseries || Z_C2 || Z_ADC_A0)
@@ -27,25 +27,25 @@ Z_to_A0 = Z_Rpull + (Z_Rseries || Z_C2 || Z_ADC_A0)
 
 // Total impedance seen from SCT
 // 1. To 3.3V through R1 : 10 kΩ
-// 2. To GND through R2+C_VREF : 41.8 kΩ
+// 2. To GND through R2+C_VREF : 33.3 kΩ
 // 3. To A0 through Rpull+Rseries : 1.1 kΩ
 
-Z_parallel_VREF = 10k || 41.8k || 1.1k
+Z_parallel_VREF = 10k || 33.3k || 1.1k
 
-- 10k || 41.8k = 8.07 kΩ 
-=> 8.07k || 1.1k = (8070 × 1100) / (8070 + 1100)
-              = 8877000 / 9170 ≈ 968 Ω
+- 10k || 33.3k = 7.69 kΩ 
+=> 7.69k || 1.1k = (7690 × 1100) / (7690 + 1100)
+              = 8459000 / 8790 ≈ 962 Ω
 
 Z_total = Z_C1 + Z_parallel_VREF
-        = 318 + 968 = 1286 Ω
+        = 318 + 962 = 1280 Ω
 
 // Voltage at VREF (AC) :
 // Divider Z_C1 / Z_parallel
 V_VREF_AC / V_SCT = Z_parallel_VREF / (Z_C1 + Z_parallel_VREF)
-V_VREF_AC / V_SCT = 968 / 1286 = 0.753
+V_VREF_AC / V_SCT = 962 / 1280 = 0.752
 
 V_SCT = 417 mV // with 12.5A on SCT-013-030
-V_VREF_AC = 417 × 0.753 = 314 mV RMS
+V_VREF_AC = 417 × 0.752 = 314 mV RMS
 
 // Voltage at A0 (via Rpull+Rseries)
 // Divider Rpull/(Rpull+Rseries) from VREF
