@@ -113,6 +113,7 @@ V_B / VREF = 100 / (1000 + 100) = 0.091
 V_diff = V_A1 - V_A0
 V_diff = 94 mV - 8.5 mV = 285.4 mV RMS
 V_diff = 94 - 8.5 = 85.5 mV RMS // for 1250W electric kettle load
-
-// Sensibilité du système :
+// vs 62 mV RMS measured => Ratio = 85.5 / 62 = 1.38 
+  
+// Theorical system sensibility :
 // S = 85.5 mV / 1250 W = 68.4 µV/W
