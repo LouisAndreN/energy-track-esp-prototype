@@ -38,6 +38,13 @@ The current components allows to get until the 8th harmonics, which can be limit
 - Individual device signatures recording for classification library in progress
 - Consideration of PCM1808 to get more harmonics for advanced devices and use of Machine Learning Model for prediction and anomaly detection
 
+# How to run
+
+- Install the project on your computer
+- Run `streamlit run <path_to_project_folder>/EMS-dashboard.py`
+- The interactive dashboard should open in your browser
+- Follow instructions to setup the system (calibration without load, with load reference, add new device to library, ...)
+
 ## Future features
 
 Some devices can be tracked but because of the relative low precision of the ADS1115, the system needs to be improved with an audio card 48kHz (PCM1808 ?) to get more harmonics until 24kHz (Nyquist theorem) to detect specific devices such as induction heater.
