@@ -18,7 +18,7 @@ The goal is to provide an accessible and practical system for monitoring househo
 - Current transformer SCT-013-030 (30A/1V)
 - 16-bit ADC ADS1115 (860 SPS)
 - Adafruit 3.5mm TRRS jack breakout
-- ESP32 S3 R16N8 (ESP32-WROOM-32E at the beginning)
+- ESP32-WROOM-32E
 - 2× 10kΩ resistors (divider)
 - 1× 1kΩ resistor (anti-aliasing filter)
 - 1× 100Ω resistor (protection)
