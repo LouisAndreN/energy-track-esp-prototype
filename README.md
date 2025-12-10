@@ -1,4 +1,4 @@
-# 🔌 Home Energy Management System prototype with Non-Intrusive device for Energy Monitoring
+# 🔌 Home Energy Management System prototype with Non-Intrusive CT for Energy Monitoring
 
 This project provides an end-to-end Energy Management System prototype, using Non-Intrusive device designed for the Japanese electrical environment (100V, 50/60Hz).
 It integrates custom low-cost hardware and real household data to estimate energy usage in realtime.
