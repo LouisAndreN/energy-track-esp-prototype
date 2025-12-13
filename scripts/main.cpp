@@ -32,9 +32,7 @@ float grid_voltage   = 100.0; // V RMS
 unsigned long last_fft_time = 0;
 const unsigned long FFT_INTERVAL = 500;  // ms
 
-// =================================================
-//                    FFT + RMS
-// =================================================
+
 void performFFT() {
     unsigned long start_time = micros();
 
@@ -95,20 +93,32 @@ void performFFT() {
 
     // -------- JSON OUTPUT --------
     Serial.print("{");
-    Serial.print("\"timestamp\":"); Serial.print(millis());
-    Serial.print(",\"acquisition_us\":"); Serial.print(acquisition_time);
+    Serial.print("\"timestamp\":"); 
+    Serial.print(millis());
+    Serial.print(",\"acquisition_us\":"); 
+    Serial.print(acquisition_time);
 
-    Serial.print(",\"v_diff_mv\":"); Serial.print(rms_voltage_mv, 3);
-    Serial.print(",\"v_rms\":"); Serial.print(rms_voltage_v, 4);
-    Serial.print(",\"i_rms\":"); Serial.print(irms, 4);
-    Serial.print(",\"power\":"); Serial.print(power, 2);
-    Serial.print(",\"thd\":"); Serial.print(thd, 4);
+    Serial.print(",\"v_diff_mv\":"); 
+    Serial.print(rms_voltage_mv, 3);
+    Serial.print(",\"v_rms\":"); 
+    Serial.print(rms_voltage_v, 4);
+    Serial.print(",\"i_rms\":"); 
+    Serial.print(irms, 4);
+    Serial.print(",\"power\":"); 
+    Serial.print(power, 2);
+    Serial.print(",\"thd\":"); 
+    Serial.print(thd, 4);
 
-    Serial.print(",\"gain\":"); Serial.print(gain_calibrated, 4);
-    Serial.print(",\"fft_bins\":"); Serial.print(FFT_BINS);
-    Serial.print(",\"freq_resolution\":"); Serial.print(freq_resolution, 4);
-    Serial.print(",\"sampling_freq\":"); Serial.print(SAMPLING_FREQ);
-    Serial.print(",\"vref_mv\":"); Serial.print(vref_mv, 2);
+    Serial.print(",\"gain\":"); 
+    Serial.print(gain_calibrated, 4);
+    Serial.print(",\"fft_bins\":"); 
+    Serial.print(FFT_BINS);
+    Serial.print(",\"freq_resolution\":"); 
+    Serial.print(freq_resolution, 4);
+    Serial.print(",\"sampling_freq\":"); 
+    Serial.print(SAMPLING_FREQ);
+    Serial.print(",\"vref_mv\":"); 
+    Serial.print(vref_mv, 2);
 
     Serial.print(",\"fft\":[");
     for (int i = 0; i < FFT_BINS; i++) {
@@ -120,9 +130,7 @@ void performFFT() {
     Serial.println();
 }
 
-// =================================================
-//                    SERIAL
-// =================================================
+
 void serialEvent() {
     if (!Serial.available()) return;
 
@@ -143,9 +151,8 @@ void serialEvent() {
     }
 }
 
-// =================================================
-//                    SETUP
-// =================================================
+
+
 void setup() {
     Serial.begin(115200);
 
@@ -160,9 +167,8 @@ void setup() {
     Serial.println("{\"status\":\"ready\",\"mode\":\"single_ended_A0\",\"rms\":\"time_domain\"}");
 }
 
-// =================================================
-//                    LOOP
-// =================================================
+
+
 void loop() {
     if (millis() - last_fft_time >= FFT_INTERVAL) {
         last_fft_time = millis();
@@ -170,3 +176,4 @@ void loop() {
     }
     serialEvent();
 }
+
