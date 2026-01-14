@@ -34,7 +34,7 @@ The current components allows to get until the 8th harmonics, which can be limit
 # Status : 🚧 **In progress**
 - Dashboard for visualization
 - Individual device signatures recording for classification library
-- Consideration of PCM1808 to get more harmonics for advanced devices and Deep Learning Model evaluation for classification, prediction and anomaly detection
+- Consideration of the Teensy 4.0 to get cleaner and more stable signatures, more harmonics and transients for advanced devices and Deep Learning Model evaluation for classification, prediction and anomaly detection
 
 # How to run
 
@@ -45,7 +45,7 @@ The current components allows to get until the 8th harmonics, which can be limit
 
 ## Future features
 
-Some devices can be tracked but because of the relative low precision of the ADS1115, the system needs to be improved with an audio card 48kHz (PCM1808 ?) to get more harmonics until 24kHz (Nyquist theorem) to classify specific devices such as induction heater, air conditionner, ...
+Some devices can be tracked but because of the relative low precision of the ADS1115, the system needs to be improved with the microontroler board Teensy 4.0 to get more harmonics to classify specific devices such as induction heater, air conditionner, ...
 
 
 
